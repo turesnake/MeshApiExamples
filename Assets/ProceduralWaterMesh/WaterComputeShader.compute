@@ -29,8 +29,8 @@ void KernelWave (uint3 id : SV_DispatchThreadID)
     // We know that our vertex layout is 6 floats per vertex
     // (float3 position + float3 normal).
     int vidx = idx * 6;
-    uint3 praw = bufVertices.Load3(vidx<<2);
-    float3 p = asfloat(praw);
+    uint3 praw = bufVertices.Load3(vidx<<2); // 说白了就是 idx * 24; 24 个 bytes, 每隔 6个float; // 取出每段头部 3个元素 (猜测一次取出 4-bytes 信息) 
+    float3 p = asfloat(praw); 
     float y = 0;
     for (int i = 0; i < gWaveSourceCount; ++i)
     {
@@ -40,8 +40,10 @@ void KernelWave (uint3 id : SV_DispatchThreadID)
         y += sin(dist * 12 - gTime) / (dist*20+10);
     }
     // Change the vertex position .y coordinate.
-    bufVertices.Store((vidx+1)<<2, asuint(y));
+    bufVertices.Store((vidx+1)<<2, asuint(y)); // 单独改 pos.y 这个 int 值
 }
+
+
 
 [numthreads(64,1,1)]
 void KernelCalcNormals (uint3 id : SV_DispatchThreadID)

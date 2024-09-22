@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18381366, g: 0.22846112, b: 0.30024698, a: 1}
+  m_IndirectSpecularColor: {r: 0.18381384, g: 0.22846152, b: 0.30024776, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -216,6 +216,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -251,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7da30d5074b4023b2f3efa07fe8622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mode: 2
+  m_Mode: 3
   m_TriangleCount: 300000
   m_TriangleExtent: 0.3
   m_ShuffleSpeed: 4
@@ -319,6 +320,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.061, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -412,6 +414,7 @@ Transform:
   m_LocalRotation: {x: -0.24115443, y: -0.094796814, z: -0.06994175, w: -0.96331}
   m_LocalPosition: {x: 0.59205467, y: 1.7980545, z: -3.177853}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -496,6 +499,7 @@ Transform:
   m_LocalRotation: {x: -0.17990762, y: 0.45269376, z: -0.09379815, w: -0.86827624}
   m_LocalPosition: {x: 1.67, y: 1.7, z: -1.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

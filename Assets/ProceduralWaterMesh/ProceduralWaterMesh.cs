@@ -5,6 +5,7 @@ using Unity.Jobs;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+
 // Simple water wave procedural mesh based on https://www.konsfik.com/procedural-water-surface-made-in-unity3d/ - written by Kostas Sfikas, March 2017.
 // Note that this sample shows both CPU and GPU mesh modification approaches, and some of the code complexity is
 // because of that; comments point out these places.
@@ -68,6 +69,8 @@ public class ProceduralWaterMesh : MonoBehaviour
 #endif
 	}
 
+
+
 	public void Update()
 	{
 		m_LocalTime += Time.deltaTime * 2.0f;
@@ -79,6 +82,8 @@ public class ProceduralWaterMesh : MonoBehaviour
 #endif
 			UpdateWaveCpu();
 	}
+
+
 
 	// Update water mesh on the CPU
 	void UpdateWaveCpu()
@@ -123,9 +128,10 @@ public class ProceduralWaterMesh : MonoBehaviour
 	{
 		// Create GPU buffer for wave source positions, if needed.
 		m_GpuWaveSourcePositions ??= new GraphicsBuffer(GraphicsBuffer.Target.Structured, m_WaveSources.Length, 12);
+
 		// Acquire mesh GPU vertex buffer, if needed. Note that we can't do this just once,
 		// since the buffer can become invalid when doing CPU based vertex modifications.
-		m_GpuVertices ??= m_Mesh.GetVertexBuffer(0);
+		m_GpuVertices ??= m_Mesh.GetVertexBuffer(0); // !!! 如果左侧的 m_GpuVertices 为 null, 才执行赋值操作;
 		
 		m_GpuWaveSourcePositions.SetData(m_WaveSourcePositions);
 		
